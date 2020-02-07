@@ -53,6 +53,14 @@ class App extends Component {
     })
   }
 
+  consultarDentista = (codigo) =>{
+    const dentista = this.state.dentistas.filter((dentista)=>{
+      return dentista.codigo === codigo
+    })
+
+    console.log(dentista)
+  }
+
   render() {
     return (
       <Fragment>
@@ -63,7 +71,7 @@ class App extends Component {
           <FormularioDentista enviarDados={this.enviarDados} />
           </div>
           <div className="col">
-          <Tabela dentistas={this.state.dentistas} excluirDentista={this.excluirDentista} />
+          <Tabela dentistas={this.state.dentistas} excluirDentista={this.excluirDentista} consultarDentista={this.consultarDentista} />
           </div>
         </div>
         </div>
